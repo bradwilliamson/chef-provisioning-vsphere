@@ -189,6 +189,8 @@ module ChefProvisioningVsphere
         if value.is_a?(Hash) then
           temp_value = value.clone
           temp_value[:password] = "*********" if value.has_key?(:password)
+          temp_value[:domainAdminPassword] = "*********" if value.has_key?(:domainAdminPassword)
+          temp_value[:product_id] = "*********" if value.has_key?(:product_id)
         else
           temp_value = value
         end
